@@ -16,8 +16,12 @@ struct Home: View {
     var body: some View {
         ZStack {
             
+            HomeList()
+                .blur(radius: show ? 20 : 0)
+                .scaleEffect(showProfile ? 0.95 : 1)
+                .animation(.default)
+            
             ContentView()
-                .background(Color.white)
                 .cornerRadius(30)
                 .shadow(radius: 20)
                 .animation(.spring())
@@ -26,11 +30,11 @@ struct Home: View {
             MenuButton(show: $show)
                 .offset(x: -30, y: showProfile ? 0 : 80)
                 .animation(.spring())
-            
+
             MenuRight(show: $showProfile)
                 .offset(x: -16, y: showProfile ? 0 : 88)
                 .animation(.spring())
-            
+
             MenuView(show: $show)
         }
     }
@@ -118,20 +122,23 @@ struct CircleButton: View {
 struct MenuButton: View {
     @Binding var show : Bool
     var body: some View {
-        ZStack(alignment: .topLeading) {
-            Button(action: {
-                self.show.toggle()
-            }) {
-                HStack {
-                    Spacer()
-                    Image(systemName: "list.dash")
-                        .foregroundColor(.black)
+        VStack() {
+            HStack {
+                Button(action: {
+                    self.show.toggle()
+                }) {
+                    HStack {
+                        Spacer()
+                        Image(systemName: "list.dash")
+                            .foregroundColor(.black)
+                    }
+                    .padding(.trailing, 20)
+                    .frame(width: 90, height: 60)
+                    .background(Color.white)
+                    .cornerRadius(30)
+                    .shadow(color: Color("buttonShadow"), radius: 10, x: 0, y: 10)
                 }
-                .padding(.trailing, 20)
-                .frame(width: 90, height: 60)
-                .background(Color.white)
-                .cornerRadius(30)
-                .shadow(color: Color("buttonShadow"), radius: 10, x: 0, y: 10)
+                Spacer()
             }
             Spacer()
         }
@@ -141,8 +148,9 @@ struct MenuButton: View {
 struct MenuRight: View {
     @Binding var show : Bool
     var body: some View {
-        ZStack(alignment: .topTrailing) {
+        VStack() {
             HStack {
+                Spacer()
                 Button(action: {
                     self.show.toggle()
                 }) {
