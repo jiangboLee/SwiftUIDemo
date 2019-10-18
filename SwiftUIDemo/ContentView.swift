@@ -9,23 +9,20 @@
 import SwiftUI
 
 struct ContentView: View {
-    
     @State var show = false
     @State var viewState = CGSize.zero
     
     var body: some View {
         ZStack {
-            
             BlurView(style: .extraLight)
-            
             TitleView()
                 .blur(radius: show ? 20 : 0)
                 .animation(.default)
-            
+            //animation view
             CardBottomView()
                 .blur(radius: show ? 20 : 0)
                 .animation(.default)
-            
+            //Describes the first view of the card
             CardView()
                 .background(show ? Color.red : Color("background8"))
                 .cornerRadius(10.0)
@@ -35,7 +32,7 @@ struct ContentView: View {
                 .rotationEffect(Angle(degrees: show ? 15.0 : 0))
                 .rotation3DEffect(Angle(degrees: show ? 50 : 0), axis: (x: 10.0, y: 10.0, z: 10.0)).animation(Animation.easeInOut(duration: 0.7))
                 .offset(x: viewState.width, y: viewState.height)
-            
+            //Describes the second view of the card
             CardView()
                 .background(show ? Color.blue : Color("background9"))
                 .cornerRadius(10.0)
@@ -46,7 +43,7 @@ struct ContentView: View {
                 .rotation3DEffect(Angle(degrees: show ? 40 : 0), axis: (x: 10.0, y: 10.0, z: 10.0))
                 .animation(Animation.easeInOut(duration: 0.5))
                 .offset(x: viewState.width, y: viewState.height)
-            
+            //Gesture development for the Cards
             LeeView()
                 .offset(x: viewState.width, y: viewState.height)
                 .scaleEffect(0.95)
@@ -104,7 +101,6 @@ struct LeeView: View {
                 Image("Logo")
                     .resizable()
                     .frame(width: 30.0, height: 30.0)
-                
             }
             .padding(.horizontal)
             Spacer()
@@ -116,7 +112,6 @@ struct LeeView: View {
         .shadow(radius: 20.0)
     }
 }
-
 struct TitleView: View {
     var body: some View {
         VStack {

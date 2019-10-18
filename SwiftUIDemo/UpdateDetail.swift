@@ -9,11 +9,9 @@
 import SwiftUI
 
 struct UpdateDetail: View {
-    
     var title = "Swiftui"
     var text = "Loading"
     var image = "Illustration1"
-    
     
     var body: some View {
         VStack(spacing: 20.0) {
@@ -28,7 +26,6 @@ struct UpdateDetail: View {
             
             Text(text)
                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-            
             Spacer()
         }
         .padding(30.0)
