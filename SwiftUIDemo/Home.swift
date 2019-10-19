@@ -9,28 +9,24 @@
 import SwiftUI
 
 struct Home: View {
-    
     @State var show: Bool = false
     @State var showProfile: Bool = false
     
     var body: some View {
         ZStack {
-            
+            //Call HomeList, ContentView, MenuBtn, MenuRight and MenuView
             HomeList()
                 .blur(radius: show ? 20 : 0)
                 .scaleEffect(showProfile ? 0.95 : 1)
                 .animation(.default)
-            
             ContentView()
                 .cornerRadius(30)
                 .shadow(radius: 20)
                 .animation(.spring())
                 .offset(y: showProfile ? 40 : UIScreen.main.bounds.height)
-            
             MenuButton(show: $show)
                 .offset(x: -30, y: showProfile ? 0 : 80)
                 .animation(.spring())
-
             MenuRight(show: $showProfile)
                 .offset(x: -16, y: showProfile ? 0 : 88)
                 .animation(.spring())
@@ -61,13 +57,11 @@ struct MenuRow: View {
         }
     }
 }
-
 struct Menu: Identifiable {
     var id = UUID()
     var title : String
     var icon : String
 }
-
 let menuData = [
     Menu(title: "Hello World!", icon: "person.crop.circle"),
     Menu(title: "lee", icon: "square.and.arrow.up"),
@@ -75,9 +69,7 @@ let menuData = [
     Menu(title: "Hello bo", icon: "paperplane"),
 ]
 
-
 struct MenuView: View {
-    
     @Binding var show : Bool
     let menu = menuData
     
@@ -104,7 +96,7 @@ struct MenuView: View {
         }
     }
 }
-
+//Button development
 struct CircleButton: View {
     var icon = "person.crop.circle"
     var body: some View {

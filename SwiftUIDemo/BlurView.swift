@@ -11,7 +11,6 @@ import SwiftUI
 struct BlurView: UIViewRepresentable {
     
     let style: UIBlurEffect.Style
-    
     func makeUIView(context: UIViewRepresentableContext<BlurView>) -> UIView {
         let view = UIView(frame: .zero)
         view.backgroundColor = .clear
