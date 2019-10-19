@@ -16,6 +16,9 @@
 		9B0F1A2C233B73E400E42D89 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0F1A2B233B73E400E42D89 /* Home.swift */; };
 		9B43BACF233C6ADC00F2E1B4 /* HomeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B43BACE233C6ADC00F2E1B4 /* HomeList.swift */; };
 		9BB1612C235ADA5100A8E227 /* UpdateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB1612B235ADA5100A8E227 /* UpdateStore.swift */; };
+		9BB1612E235AEA5400A8E227 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB1612D235AEA5400A8E227 /* TabBar.swift */; };
+		9BB16130235B3ECC00A8E227 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB1612F235B3ECC00A8E227 /* Settings.swift */; };
+		9BB16132235B4B4B00A8E227 /* CertificateRows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB16131235B4B4B00A8E227 /* CertificateRows.swift */; };
 		9BE8087F233E2C2B00A8F4F2 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE8087E233E2C2B00A8F4F2 /* BlurView.swift */; };
 		9BFF8DFF234E299E006810DE /* UpdateList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFF8DFE234E299E006810DE /* UpdateList.swift */; };
 		9BFF8E01234E3286006810DE /* UpdateDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFF8E00234E3286006810DE /* UpdateDetail.swift */; };
@@ -33,6 +36,9 @@
 		9B0F1A2B233B73E400E42D89 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		9B43BACE233C6ADC00F2E1B4 /* HomeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeList.swift; sourceTree = "<group>"; };
 		9BB1612B235ADA5100A8E227 /* UpdateStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateStore.swift; sourceTree = "<group>"; };
+		9BB1612D235AEA5400A8E227 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		9BB1612F235B3ECC00A8E227 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		9BB16131235B4B4B00A8E227 /* CertificateRows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CertificateRows.swift; sourceTree = "<group>"; };
 		9BE8087E233E2C2B00A8F4F2 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		9BFF8DFE234E299E006810DE /* UpdateList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateList.swift; sourceTree = "<group>"; };
 		9BFF8E00234E3286006810DE /* UpdateDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDetail.swift; sourceTree = "<group>"; };
@@ -70,12 +76,15 @@
 			children = (
 				9B042477233A202F002BE88D /* AppDelegate.swift */,
 				9B042479233A202F002BE88D /* SceneDelegate.swift */,
+				9BB1612D235AEA5400A8E227 /* TabBar.swift */,
 				9B04247B233A202F002BE88D /* ContentView.swift */,
 				9B0F1A2B233B73E400E42D89 /* Home.swift */,
 				9B43BACE233C6ADC00F2E1B4 /* HomeList.swift */,
 				9BFF8DFE234E299E006810DE /* UpdateList.swift */,
 				9BFF8E00234E3286006810DE /* UpdateDetail.swift */,
 				9BB1612B235ADA5100A8E227 /* UpdateStore.swift */,
+				9BB1612F235B3ECC00A8E227 /* Settings.swift */,
+				9BB16131235B4B4B00A8E227 /* CertificateRows.swift */,
 				9BE8087E233E2C2B00A8F4F2 /* BlurView.swift */,
 				9B04247D233A2033002BE88D /* Assets.xcassets */,
 				9B042482233A2033002BE88D /* LaunchScreen.storyboard */,
@@ -166,6 +175,7 @@
 			files = (
 				9B042478233A202F002BE88D /* AppDelegate.swift in Sources */,
 				9BB1612C235ADA5100A8E227 /* UpdateStore.swift in Sources */,
+				9BB16132235B4B4B00A8E227 /* CertificateRows.swift in Sources */,
 				9BFF8DFF234E299E006810DE /* UpdateList.swift in Sources */,
 				9B43BACF233C6ADC00F2E1B4 /* HomeList.swift in Sources */,
 				9BFF8E01234E3286006810DE /* UpdateDetail.swift in Sources */,
@@ -173,6 +183,8 @@
 				9B0F1A2C233B73E400E42D89 /* Home.swift in Sources */,
 				9B04247C233A202F002BE88D /* ContentView.swift in Sources */,
 				9BE8087F233E2C2B00A8F4F2 /* BlurView.swift in Sources */,
+				9BB16130235B3ECC00A8E227 /* Settings.swift in Sources */,
+				9BB1612E235AEA5400A8E227 /* TabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

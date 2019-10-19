@@ -15,38 +15,53 @@ struct HomeList: View {
     
     var body: some View {
         
-        VStack {
-            HStack {
-                VStack {
-                    Text("Hello")
-                        .font(.largeTitle)
-                        .fontWeight(.heavy)
-                    Text("22 person")
-                        .foregroundColor(.gray)
-                }
-                Spacer()
-            }
-            .padding(.leading, 70)
-            .padding(.bottom, 40)
-            
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 30) {
-                    ForEach(courseData) { item in
-                        Button(action: {
-                            self.showModel = true
-                        }) {
-                            CourseView(title: item.title, image: item.image, backgroundColor: item.backgroundColor, shadowColor: item.shadowColor)
-                        }.sheet(isPresented: self.$showModel) {
-                            ContentView()
-                        }
-                    
+        ScrollView {
+            VStack {
+                HStack {
+                    VStack {
+                        Text("Hello")
+                            .font(.largeTitle)
+                            .fontWeight(.heavy)
+                        Text("22 person")
+                            .foregroundColor(.gray)
                     }
+                    Spacer()
                 }
-                .padding(.leading, 40)
-                Spacer()
+                .padding(.leading, 70)
+                
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 30) {
+                        ForEach(courseData) { item in
+                            Button(action: {
+                                self.showModel = true
+                            }) {
+                                GeometryReader { geometry in
+                                    CourseView(
+                                        title: item.title,
+                                        image: item.image,
+                                        backgroundColor: item.backgroundColor,
+                                        shadowColor: item.shadowColor
+                                    )
+                                        .rotation3DEffect(Angle(degrees: Double(geometry.frame(in: .global).minX - 40) / -40), axis: (x: 0, y: 10, z: 0))
+                                }
+                                .frame(width: 246, height: 360)
+                            }.sheet(isPresented: self.$showModel) {
+                                ContentView()
+                            }
+                            
+                        }
+                    }
+                    .padding(.leading, 30)
+                    .padding(.top, 30)
+                    .padding(.bottom, 70)
+                    Spacer()
+                }
+                
+                CertificateRows()
             }
+            .padding(.top, 78)
+            .padding(.bottom, 83)
         }
-        .padding(.top, 78)
     }
 }
 
@@ -101,9 +116,33 @@ let CourseData = [
         shadowColor: Color("shadow3")
     ),
     Course(
-    title: "Hello cat haha",
-    image: "Illustration2",
-    backgroundColor: Color("background4"),
-    shadowColor: Color("shadow4")
+        title: "Hello cat haha",
+        image: "Illustration2",
+        backgroundColor: Color("background4"),
+        shadowColor: Color("shadow4")
+    ),
+    Course(
+        title: "Build an app with SwiftUI",
+        image: "Illustration1",
+        backgroundColor: Color("background3"),
+        shadowColor: Color("shadow3")
+    ),
+    Course(
+        title: "Hello cat haha",
+        image: "Illustration2",
+        backgroundColor: Color("background4"),
+        shadowColor: Color("shadow4")
+    ),
+    Course(
+        title: "Build an app with SwiftUI",
+        image: "Illustration1",
+        backgroundColor: Color("background3"),
+        shadowColor: Color("shadow3")
+    ),
+    Course(
+        title: "Hello cat haha",
+        image: "Illustration2",
+        backgroundColor: Color("background4"),
+        shadowColor: Color("shadow4")
     )
 ]
