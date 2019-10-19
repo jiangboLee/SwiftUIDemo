@@ -15,6 +15,7 @@
 		9B042484233A2033002BE88D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B042482233A2033002BE88D /* LaunchScreen.storyboard */; };
 		9B0F1A2C233B73E400E42D89 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0F1A2B233B73E400E42D89 /* Home.swift */; };
 		9B43BACF233C6ADC00F2E1B4 /* HomeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B43BACE233C6ADC00F2E1B4 /* HomeList.swift */; };
+		9BB1612C235ADA5100A8E227 /* UpdateStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB1612B235ADA5100A8E227 /* UpdateStore.swift */; };
 		9BE8087F233E2C2B00A8F4F2 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE8087E233E2C2B00A8F4F2 /* BlurView.swift */; };
 		9BFF8DFF234E299E006810DE /* UpdateList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFF8DFE234E299E006810DE /* UpdateList.swift */; };
 		9BFF8E01234E3286006810DE /* UpdateDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFF8E00234E3286006810DE /* UpdateDetail.swift */; };
@@ -31,6 +32,7 @@
 		9B042485233A2033002BE88D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B0F1A2B233B73E400E42D89 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		9B43BACE233C6ADC00F2E1B4 /* HomeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeList.swift; sourceTree = "<group>"; };
+		9BB1612B235ADA5100A8E227 /* UpdateStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateStore.swift; sourceTree = "<group>"; };
 		9BE8087E233E2C2B00A8F4F2 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		9BFF8DFE234E299E006810DE /* UpdateList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateList.swift; sourceTree = "<group>"; };
 		9BFF8E00234E3286006810DE /* UpdateDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateDetail.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				9B43BACE233C6ADC00F2E1B4 /* HomeList.swift */,
 				9BFF8DFE234E299E006810DE /* UpdateList.swift */,
 				9BFF8E00234E3286006810DE /* UpdateDetail.swift */,
+				9BB1612B235ADA5100A8E227 /* UpdateStore.swift */,
 				9BE8087E233E2C2B00A8F4F2 /* BlurView.swift */,
 				9B04247D233A2033002BE88D /* Assets.xcassets */,
 				9B042482233A2033002BE88D /* LaunchScreen.storyboard */,
@@ -162,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B042478233A202F002BE88D /* AppDelegate.swift in Sources */,
+				9BB1612C235ADA5100A8E227 /* UpdateStore.swift in Sources */,
 				9BFF8DFF234E299E006810DE /* UpdateList.swift in Sources */,
 				9B43BACF233C6ADC00F2E1B4 /* HomeList.swift in Sources */,
 				9BFF8E01234E3286006810DE /* UpdateDetail.swift in Sources */,

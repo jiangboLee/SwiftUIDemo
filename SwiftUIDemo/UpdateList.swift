@@ -11,48 +11,66 @@ import SwiftUI
 struct UpdateList: View {
     
     var updates = updateDate
-    
-    @State var present = false
+    @ObservedObject var store = UpdateStore(updates: updateDate)
+
+    func addItem() {
+        store.updates.append(Update(image: "Illustration1", title: "newTitle", text: "newText", date: "JUN 26"))
+    }
+    func move(from source: IndexSet, to destination: Int) {
+        #warning("not use swap!!! crash!!!")
+        store.updates.move(fromOffsets: source, toOffset: destination)
+    }
     
     var body: some View {
         NavigationView {
-            List(updates) { item in
-                NavigationLink(destination: UpdateDetail(title: item.title, text: item.text, image: item.image)) {
-                    HStack(spacing: 12.0) {
-                        Image(item.image)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 80, height: 80)
-                            .background(Color("background"))
-                            .cornerRadius(20)
-                            
-                        VStack(alignment: .leading) {
-                            Text(item.title)
-                                .font(.headline)
-                            Text(item.text)
-                                .lineLimit(2)
-                                .lineSpacing(4)
-                                .font(.subheadline)
-                            Text(item.date)
-                                .font(.caption)
-                                .fontWeight(.bold)
-                                .foregroundColor(.gray)
+            
+            VStack {
+                Button(action: addItem) {
+                    Text("Add Item")
+                        .foregroundColor(.white)
+                }
+                .padding(8)
+                .background(Color("background3"))
+                .cornerRadius(8)
+                
+                List {
+                    ForEach(store.updates) { item in
+                        NavigationLink(destination: UpdateDetail(title: item.title, text: item.text, image: item.image)) {
+                            HStack(spacing: 12.0) {
+                                Image(item.image)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 80, height: 80)
+                                    .background(Color("background"))
+                                    .cornerRadius(20)
+                                
+                                VStack(alignment: .leading) {
+                                    Text(item.title)
+                                        .font(.headline)
+                                    Text(item.text)
+                                        .lineLimit(2)
+                                        .lineSpacing(4)
+                                        .font(.subheadline)
+                                    Text(item.date)
+                                        .font(.caption)
+                                        .fontWeight(.bold)
+                                        .foregroundColor(.gray)
+                                }
+                            }
                         }
+                        .padding(.vertical, 8)
                     }
+                    .onDelete { indexSet in
+                        self.store.updates.remove(at: indexSet.first!)
+                    }
+                    .onMove(perform: move)
                 }
-                .padding(.vertical, 8)
+                .navigationBarTitle("Updates")
+                .navigationBarItems(trailing:
+                    EditButton()
+                )
             }
-            .navigationBarTitle("Updates")
-            .navigationBarItems(trailing:
-                Button(action: {
-                    self.present.toggle()
-                }) {
-                    Image(systemName: "gear")
-                }
-                .sheet(isPresented: $present, content: {
-                    Text("hehe")
-                })
-            )
+            
         }
     }
 }
